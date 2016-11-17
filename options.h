@@ -61,6 +61,11 @@
 #define USE_ETHEREUM 0
 #endif
 
+// support Monero operations
+#ifndef USE_MONERO
+#define USE_MONERO 1
+#endif
+
 // support Graphene operations (STEEM, BitShares)
 #ifndef USE_GRAPHENE
 #define USE_GRAPHENE 0
@@ -68,7 +73,7 @@
 
 // support Keccak hashing
 #ifndef USE_KECCAK
-#define USE_KECCAK USE_ETHEREUM
+#define USE_KECCAK USE_ETHEREUM | USE_MONERO
 #endif
 
 #endif

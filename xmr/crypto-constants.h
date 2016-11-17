@@ -1,0 +1,9 @@
+#ifndef __XMR_CRYPTO_CONSTANTS_H__
+#define __XMR_CRYPTO_CONSTANTS_H__
+
+#define XMR_KEY_SIZE_BYTES    32U
+#define XMR_KEY_SIZE_BITS     (XMR_KEY_SIZE_BYTES * 8)
+#define XMR_HASH_SIZE         32U
+#define XMR_HASH_STATE_SIZE   200U
+
+#endif
