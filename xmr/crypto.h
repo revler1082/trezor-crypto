@@ -1,7 +1,9 @@
 #ifndef __XMR_CRYPTO_H__
 #define __XMR_CRYPTO_H__
 
-#include <cstddef>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stddef.h>
 #include "crypto-constants.h"
 
 #pragma pack(push, 1)
@@ -20,7 +22,7 @@ typedef xmr_ec_point xmr_key_image;
 
 xmr_secret_key xmr_generate_keys(xmr_public_key *pub, xmr_secret_key *sec, const xmr_secret_key *rkey, bool recover);
 bool xmr_check_key(const xmr_public_key *pub);
-bool xmr_secret_key_to_public_key(const secret_key *sec, public_key *pub);
+bool xmr_secret_key_to_public_key(const xmr_secret_key *sec, xmr_public_key *pub);
 bool xmr_generate_key_derivation(const xmr_public_key *key1, const xmr_secret_key *key2, xmr_key_derivation *derivation);
 void xmr_derivation_to_scalar(const xmr_key_derivation *derivation, size_t output_index, xmr_ec_scalar *res);
 bool xmr_derive_public_key(const xmr_key_derivation *derivation, size_t output_index, const xmr_public_key *base, xmr_public_key *derived_key);
